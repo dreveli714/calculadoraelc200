@@ -380,6 +380,16 @@ table.doc tfoot td{
 <div class="toast" id="toast"></div>
 
 <script>
+/* =======================================================================
+   DRIVE — ya configurado. Solo toca estas dos líneas si cambia algo:
+   url   : la URL /exec de tu aplicación web de Apps Script
+   token : la misma palabra que pusiste en  const TOKEN = '...'  del script
+   ======================================================================= */
+const DRIVE = {
+  url:   "https://script.google.com/macros/s/AKfycbwFpDqfRtp7agw5yDzQg0yTxq6s7lNh5RZRhl2yPE4S4YdzBYagsbu3rbMljFtQFjQO/exec",
+  token: "reflectiv-cambia-esto-1234"
+};
+
 /* ============ i18n ============ */
 const T = {
   es:{loc:"es-ES",kind:"PROFORMA",head:"Datos de la proforma",client:"Cliente",films:"Láminas",elec:"Componentes eléctricos",log:"Logística y producción",notes:"Notas y condiciones",
@@ -697,7 +707,7 @@ const store = {
     persists = false; mem.set(k,v); return {key:k,value:v};
   }
 };
-let cfg = {url:"",token:""};
+let cfg = {url:DRIVE.url, token:DRIVE.token};
 const remote = () => !!cfg.url;
 
 async function loadCfg(){
